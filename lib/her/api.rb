@@ -56,7 +56,7 @@ module Her
     #   end
     #
     # @example A custom parse middleware
-    #   class MyCustomParser < Faraday::Response::Middleware
+    #   class MyCustomParser < Faraday::Middleware
     #     def on_complete(env)
     #       json = JSON.parse(env[:body], :symbolize_names => true)
     #       errors = json.delete(:errors) || {}
