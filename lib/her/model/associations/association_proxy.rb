@@ -2,13 +2,15 @@ module Her
   module Model
     module Associations
       class AssociationProxy < BasicObject
+        undef_method :==
+        undef_method :equal?
 
         # @private
         def self.install_proxy_methods(target_name, *names)
           names.each do |name|
             module_eval <<-RUBY, __FILE__, __LINE__ + 1
-              def #{name}(*args, &block)
-                #{target_name}.send(#{name.inspect}, *args, &block)
+              def #{name}(...)
+                #{target_name}.send(#{name.inspect}, ...)
               end
             RUBY
           end
@@ -27,7 +29,7 @@ module Her
         end
 
         # @private
-        def method_missing(name, *args, &block)
+        def method_missing(name, ...)
           if name == :object_id # avoid redefining object_id
             return association.fetch.object_id
           end
@@ -36,7 +38,7 @@ module Her
           AssociationProxy.install_proxy_methods 'association.fetch', name
 
           # resend message to fetched object
-          __send__(name, *args, &block)
+          __send__(name, ...)
         end
       end
     end
