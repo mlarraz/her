@@ -1,8 +1,4 @@
-# encoding: utf-8
-
-require File.join(File.dirname(__FILE__), "../spec_helper.rb")
-
-describe Her::Model::Parse do
+RSpec.describe Her::Model::Parse do
   context "when include_root_in_json is set" do
     before do
       Her::API.setup url: "https://api.example.com" do |builder|

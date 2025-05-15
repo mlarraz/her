@@ -1,8 +1,4 @@
-# encoding: utf-8
-
-require File.join(File.dirname(__FILE__), "../spec_helper.rb")
-
-describe Her::Model::ORM do
+RSpec.describe Her::Model::ORM do
   context "mapping data to Ruby objects" do
     before do
       api = Her::API.new

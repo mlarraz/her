@@ -1,8 +1,4 @@
-# encoding: utf-8
-
-require File.join(File.dirname(__FILE__), "../spec_helper.rb")
-
-describe Her::Model::Paths do
+RSpec.describe Her::Model::Paths do
   context "building request paths" do
     context "simple model" do
       before do

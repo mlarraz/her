@@ -1,8 +1,4 @@
-# encoding: utf-8
-
-require File.join(File.dirname(__FILE__), "../spec_helper.rb")
-
-describe Her::Model::NestedAttributes do
+RSpec.describe Her::Model::NestedAttributes do
   context "with a belongs_to association" do
     before do
       Her::API.setup url: "https://api.example.com" do |builder|

@@ -1,8 +1,4 @@
-# encoding: utf-8
-
-require File.join(File.dirname(__FILE__), "../spec_helper.rb")
-
-describe Her::Model::Attributes do
+RSpec.describe Her::Model::Attributes do
   context "mapping data to Ruby objects" do
     before { spawn_model "Foo::User" }
 
@@ -337,17 +333,17 @@ describe Her::Model::Attributes do
 
       it "overrides getter method" do
         user = Foo::User.new
-        expect { user.fullname }.to_not raise_error(NotImplementedError)
+        expect { user.fullname }.to_not raise_error
       end
 
       it "overrides setter method" do
         user = Foo::User.new
-        expect { user.fullname = "foo" }.to_not raise_error(NotImplementedError)
+        expect { user.fullname = "foo" }.to_not raise_error
       end
 
       it "overrides predicate method" do
         user = Foo::User.new
-        expect { user.fullname? }.to_not raise_error(NotImplementedError)
+        expect { user.fullname? }.to_not raise_error
       end
     end
   end

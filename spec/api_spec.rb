@@ -1,8 +1,4 @@
-# encoding: utf-8
-
-require File.join(File.dirname(__FILE__), "spec_helper.rb")
-
-describe Her::API do
+RSpec.describe Her::API do
   subject { Her::API.new }
 
   context "initialization" do

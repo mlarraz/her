@@ -1,8 +1,4 @@
-# encoding: utf-8
-
-require File.join(File.dirname(__FILE__), "../spec_helper.rb")
-
-describe "Her::Model and ActiveModel::Dirty" do
+RSpec.describe "Her::Model and ActiveModel::Dirty" do
   context "checking dirty attributes" do
     before do
       Her::API.setup url: "https://api.example.com" do |builder|

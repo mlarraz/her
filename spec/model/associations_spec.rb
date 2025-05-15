@@ -1,8 +1,4 @@
-# encoding: utf-8
-
-require File.join(File.dirname(__FILE__), "../spec_helper.rb")
-
-describe Her::Model::Associations do
+RSpec.describe Her::Model::Associations do
   context "setting associations without details" do
     before { spawn_model "Foo::User" }
     subject(:associations) { Foo::User.associations }

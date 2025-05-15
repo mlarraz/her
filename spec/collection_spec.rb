@@ -1,6 +1,4 @@
-require "spec_helper"
-
-describe Her::Collection do
+RSpec.describe Her::Collection do
   let(:items) { [1, 2, 3, 4] }
   let(:metadata) { { name: "Testname" } }
   let(:errors) { { name: ["not_present"] } }

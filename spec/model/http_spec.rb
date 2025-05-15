@@ -1,8 +1,4 @@
-# encoding: utf-8
-
-require File.join(File.dirname(__FILE__), "../spec_helper.rb")
-
-describe Her::Model::HTTP do
+RSpec.describe Her::Model::HTTP do
   context "binding a model with an API" do
     let(:api1) { Her::API.new url: "https://api1.example.com" }
     let(:api2) { Her::API.new url: "https://api2.example.com" }

@@ -1,8 +1,4 @@
-# encoding: utf-8
-
-require "spec_helper"
-
-describe Her::Model do
+RSpec.describe Her::Model do
   before do
     Her::API.setup url: "https://api.example.com" do |connection|
       connection.use Her::Middleware::FirstLevelParseJSON

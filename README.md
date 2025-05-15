@@ -959,7 +959,7 @@ Then, in your tests, we can specify what (fake) HTTP requests will return:
 
 ```ruby
 # spec/models/user.rb
-describe User do
+RSpec.describe User do
   before do
     stub_api_for(User) do |stub|
       stub.get("/users/popular") { |env| [200, {}, [{ id: 1, name: "Tobias Fünke" }, { id: 2, name: "Lindsay Fünke" }].to_json] }
@@ -978,7 +978,7 @@ We can redefine the API for a model as many times as we want, like for more comp
 
 ```ruby
 # spec/models/user.rb
-describe Post do
+RSpec.describe Post do
   describe :recent do
     before do
       stub_api_for(Post) do |stub|

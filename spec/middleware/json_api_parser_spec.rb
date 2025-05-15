@@ -1,8 +1,4 @@
-# encoding: utf-8
-
-require "spec_helper"
-
-describe Her::Middleware::JsonApiParser do
+RSpec.describe Her::Middleware::JsonApiParser do
   subject { described_class.new }
 
   context "with valid JSON body" do

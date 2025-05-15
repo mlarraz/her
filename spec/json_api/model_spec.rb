@@ -1,6 +1,4 @@
-require "spec_helper"
-
-describe Her::JsonApi::Model do
+RSpec.describe Her::JsonApi::Model do
   before do
     Her::API.setup url: "https://api.example.com" do |connection|
       connection.use Her::Middleware::JsonApiParser
