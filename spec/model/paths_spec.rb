@@ -58,7 +58,7 @@ RSpec.describe Her::Model::Paths do
 
         it "raises exceptions when building a path without required custom variables" do
           Foo::User.collection_path "/organizations/:organization_id/utilisateurs"
-          expect { Foo::User.new(id: "foo").request_path }.to raise_error(Her::Errors::PathError, "Missing :_organization_id parameter to build the request path. Path is `/organizations/:organization_id/utilisateurs/:id`. Parameters are `{:id=>\"foo\"}`.")
+          expect { Foo::User.new(id: "foo").request_path }.to raise_error(Her::Errors::PathError, "Missing :_organization_id parameter to build the request path. Path is `/organizations/:organization_id/utilisateurs/:id`. Parameters are `#{{id: "foo"}.inspect}`.")
         end
 
         it "escapes the variable values" do
@@ -118,12 +118,12 @@ RSpec.describe Her::Model::Paths do
 
         it "raises exceptions when building a path without required custom variables" do
           Foo::AdminUser.collection_path "/organizations/:organization_id/users"
-          expect { Foo::AdminUser.new(id: "foo").request_path }.to raise_error(Her::Errors::PathError, "Missing :_organization_id parameter to build the request path. Path is `/organizations/:organization_id/users/:id`. Parameters are `{:id=>\"foo\"}`.")
+          expect { Foo::AdminUser.new(id: "foo").request_path }.to raise_error(Her::Errors::PathError, "Missing :_organization_id parameter to build the request path. Path is `/organizations/:organization_id/users/:id`. Parameters are `#{{id:"foo"}.inspect}`.")
         end
 
         it "raises exceptions when building a relative path without required custom variables" do
           Foo::AdminUser.collection_path "organizations/:organization_id/users"
-          expect { Foo::AdminUser.new(id: "foo").request_path }.to raise_error(Her::Errors::PathError, "Missing :_organization_id parameter to build the request path. Path is `organizations/:organization_id/users/:id`. Parameters are `{:id=>\"foo\"}`.")
+          expect { Foo::AdminUser.new(id: "foo").request_path }.to raise_error(Her::Errors::PathError, "Missing :_organization_id parameter to build the request path. Path is `organizations/:organization_id/users/:id`. Parameters are `#{{id:"foo"}.inspect}`.")
         end
       end
     end
